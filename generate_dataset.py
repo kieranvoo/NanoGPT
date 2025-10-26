@@ -1,7 +1,7 @@
 import json
 import random
 
-def make_pairs(n=100_000, seed=1):
+def make_pairs(n=50_000, seed=123):
     """
     Generate n positive/negative QA pairs for basic arithmetic & simple algebra.
     Each item has ONLY:
@@ -85,7 +85,7 @@ def make_pairs(n=100_000, seed=1):
     return data
 
 if __name__ == "__main__":
-    pairs = make_pairs(n=100_000, seed=42)
+    pairs = make_pairs(n=50_000, seed=123)
     out_path = "pos_neg_pairs.json"  # change this if you want a different location
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(pairs, f, indent=2, ensure_ascii=False)
